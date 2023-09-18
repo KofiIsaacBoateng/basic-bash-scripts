@@ -1,5 +1,5 @@
 # basic-bash-script
-All scripts should be run in the terminal and couple of them take command line arguments.
+All scripts should be run in the terminal and a couple of them take command line arguments.
 
 ### SCIPTS DESCRIPTION
   * ###### QUESTIONNAIRE from questionnaire.sh.
