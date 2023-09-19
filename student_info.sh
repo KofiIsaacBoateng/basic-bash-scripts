@@ -34,3 +34,15 @@ echo "$($PSQL "SELECT ROUND(AVG(gpa), 2) FROM students")"
 
 echo -e "\nMajor ID, total number of students in a column named 'number_of_students', and average GPA rounded to two decimal places in a column name 'average_gpa', for each major ID in the students table having a student count greater than 1:"
 echo "$($PSQL "SELECT major_id, count(*) as number_of_students, round(avg(gpa), 2) from students group by major_id having count(*) > 1")"
+
+
+echo -e "\nList of majors, in alphabetical order, that either no student is taking or has a student whose first name contains a case insensitive 'ma':"
+echo "$($PSQL "SELECT major FROM majors FULL JOIN students ON majors.major_id = students.major_id WHERE student_id IS NULL OR first_name ILIKE '%ma%' ORDER BY major")"
+
+
+echo -e "\nList of unique courses, in reverse alphabetical order, that no student or 'Obie Hilpert' is taking:"
+echo "$($PSQL "SELECT DISTINCT(course) FROM students FULL JOIN majors USING(major_id) FULL JOIN majors_courses USING(major_id) FULL JOIN courses USING(course_id) WHERE student_id IS NULL OR (first_name = 'Obie' AND last_name = 'Hilpert') ORDER BY course DESC")"
+
+
+echo -e "\nList of courses in alphabetical order, with only one student enrolled:"
+echo "$($PSQL "SELECT course FROM students INNER JOIN majors USING(major_id) INNER JOIN majors_courses USING(major_id) INNER JOIN courses USING(course_id) GROUP BY course HAVING COUNT(*) = 1 ORDER BY course")"
