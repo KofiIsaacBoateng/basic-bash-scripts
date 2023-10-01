@@ -75,6 +75,23 @@ RENT_MENU(){
                          #insert new customer
                          INSERT_CUSTOMER_RESULT=$($PSQL "INSERT INTO customers(name, phone) VALUES('$CUSTOMER_NAME', '$PHONE_NUMBER')")
                     fi
+
+                    # get customer_id
+                    CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone = '$PHONE_NUMBER'")
+
+                    # insert bike rental
+                    INSERT_RENTAL_RESULT=$($PSQL "INSERT INTO rentals(customer_id, bike_id) VALUES($CUSTOMER_ID, $BIKE_ID_TO_RENT)")
+                    
+                    # set bike availability to false
+                    SET_TO_FALSE_RESULT=$($PSQL "UPDATE bikes SET available = FALSE WHERE bike_id = $BIKE_ID_TO_RENT")
+                    
+                    # get bike info
+                    BIKE_INFO=$($PSQL "SELECT size, type FROM bikes WHERE bike_id = $BIKE_ID_TO_RENT")
+                    BIKE_INFO_FORMATTED=$(echo $BIKE_INFO | sed 's/ |/"/')
+                    
+                    # send to main menu
+                    MAIN_MENU "I have put you down for the $BIKE_INFO_FORMATTED Bike, $( echo $CUSTOMER_NAME | sed -E 's/^ *| *$//g')."
+          
                fi
           fi
 
