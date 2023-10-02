@@ -1,16 +1,25 @@
-~~ kitty_ipsum_1.txt info ~~
+## ~~ kitty_ipsum_1.txt info ~~~
 
-#1
+##### 1
 Number of lines:
 27
+```bash
+cat kitty_ipsum_1.txt | wc -l   
+```
 
 #2
 Number of words:
 332
+```bash
+cat kitty_ipsum_1.txt | wc -w
+```
 
 #3
 Number of characters:
 1738
+```bash
+cat kitty_ipsum_1.txt | wc -m
+```
 
 #4a
 Number of times meow or meowzer appears:
