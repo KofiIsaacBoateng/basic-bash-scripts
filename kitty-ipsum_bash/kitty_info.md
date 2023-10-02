@@ -1,4 +1,4 @@
-## ~~ kitty_ipsum_1.txt info ~~~
+## ~~ kitty_ipsum_1.txt info ~~
 
 ##### 1
 Number of lines:
@@ -6,6 +6,7 @@ Number of lines:
 ```bash
 cat kitty_ipsum_1.txt | wc -l   
 ```
+<br>
 
 #### 2
 Number of words:
@@ -13,6 +14,7 @@ Number of words:
 ```bash
 cat kitty_ipsum_1.txt | wc -w
 ```
+<br>
 
 #### 3
 Number of characters:
@@ -20,6 +22,7 @@ Number of characters:
 ```bash
 cat kitty_ipsum_1.txt | wc -m
 ```
+<br>
 
 #### 4a
 Number of times meow or meowzer appears:
@@ -27,6 +30,7 @@ Number of times meow or meowzer appears:
 ```bash
 cat kitty_ipsum_1.txt | grep --color -o "meow[a-z]*" | wc -l
 ```
+<br>
 
 #### 4b
 Lines that they appear on:\
@@ -34,28 +38,31 @@ Lines that they appear on:\
 4\
 10\
 22\
-23\
+23
 ```bash
 cat kitty_ipsum_1.txt | grep --line-number "meow[a-z]*" | sed -E "s/([0-9]+).*/\1/"
 ```
+<br>
 
-#5a
+#### 5a
 Number of times cat, cats, or catnip appears:
 7
+<br>
 
-#5b
+#### 5b
 Lines that they appear on:
-1
-3
-7
-17
-21
-22
+1\
+3\
+7\
+17\
+21\
+22\
 26
+<br>
+<br>
+<br>
 
-
-
-~~ kitty_ipsum_2.txt info ~~
+## ~~ kitty_ipsum_2.txt info ~~
 
 #1
 Number of lines:
