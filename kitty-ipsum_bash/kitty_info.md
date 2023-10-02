@@ -107,6 +107,10 @@ cat kitty_ipsum_2.txt | wc -m
 #### 4a
 Number of times meow or meowzer appears:
 9
+```bash
+cat kitty_ipsum_2.txt | grep --color -o "meow[a-z]*" | wc -l
+```
+<br>
 
 #### 4b
 Lines that they appear on:\
@@ -117,6 +121,10 @@ Lines that they appear on:\
 24\
 25\
 28
+```bash
+cat kitty_ipsum_2.txt | grep -n "meow[a-z]*" | sed -r "s/([0-9]+).*/\1/"
+```
+<br>
 
 #### 5a
 Number of times cat, cats, or catnip appears:
