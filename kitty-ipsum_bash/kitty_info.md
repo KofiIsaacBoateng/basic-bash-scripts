@@ -21,17 +21,23 @@ Number of characters:
 cat kitty_ipsum_1.txt | wc -m
 ```
 
-#4a
+#### 4a
 Number of times meow or meowzer appears:
 7
+```bash
+cat kitty_ipsum_1.txt | grep --color -o "meow[a-z]*" | wc -l
+```
 
-#4b
-Lines that they appear on:
-1
-4
-10
-22
-23
+#### 4b
+Lines that they appear on:\
+1\
+4\
+10\
+22\
+23\
+```bash
+cat kitty_ipsum_1.txt | grep --line-number "meow[a-z]*" | sed -E "s/([0-9]+).*/\1/"
+```
 
 #5a
 Number of times cat, cats, or catnip appears:
