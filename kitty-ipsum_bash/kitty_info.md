@@ -69,7 +69,7 @@ Lines that they appear on:\
 22\
 26
 ```bash
-cat kitty_ipsum_1.txt | grep -n "cat[a-z]*" | sed -r "s/([0-9]+).*/\1/"
+cat kitty_ipsum_1.txt | grep --line-number "cat[a-z]*" | sed -E "s/([0-9]+).*/\1/"
 ```
 <br>
 <br>
@@ -108,7 +108,7 @@ cat kitty_ipsum_2.txt | wc -m
 Number of times meow or meowzer appears:
 9
 ```bash
-cat kitty_ipsum_2.txt | grep --color -o "meow[a-z]*" | wc -l
+cat kitty_ipsum_2.txt | grep -o "meow[a-z]*" | wc -l
 ```
 <br>
 
@@ -129,6 +129,10 @@ cat kitty_ipsum_2.txt | grep -n "meow[a-z]*" | sed -r "s/([0-9]+).*/\1/"
 #### 5a
 Number of times cat, cats, or catnip appears:
 8
+```bash
+cat kitty_ipsum_2.txt | grep -o "cat[a-z]*" | wc -l
+```
+<br>
 
 #### 5b
 Lines that they appear on:\
@@ -139,6 +143,10 @@ Lines that they appear on:\
 25\
 26\
 28
+```bash
+cat kitty_ipsum_2.txt | grep -n "cat[a-z]*" | sed -r "s/([0-9]+).*/\1/" 
+```
+<br>
 <br>
 <br>
 <br>
