@@ -83,7 +83,7 @@ cat kitty_ipsum_1.txt | grep --line-number "cat[a-z]*" | sed -E "s/([0-9]+).*/\1
 #### 1
 Number of lines:
 28
-```bash
+```shell
 cat kitty_ipsum_2.txt | wc -l
 ```
 <br>
@@ -91,7 +91,7 @@ cat kitty_ipsum_2.txt | wc -l
 #### 2
 Number of words:
 307
-```bash
+```shell
 cat kitty_ipsum_2.txt | wc -w
 ```
 <br>
@@ -99,7 +99,7 @@ cat kitty_ipsum_2.txt | wc -w
 #### 3
 Number of characters:
 1678
-```bash
+```shell
 cat kitty_ipsum_2.txt | wc -m
 ```
 <br>
@@ -107,7 +107,7 @@ cat kitty_ipsum_2.txt | wc -m
 #### 4a
 Number of times meow or meowzer appears:
 9
-```bash
+```shell
 cat kitty_ipsum_2.txt | grep -o "meow[a-z]*" | wc -l
 ```
 <br>
@@ -121,7 +121,7 @@ Lines that they appear on:\
 24\
 25\
 28
-```bash
+```shell
 cat kitty_ipsum_2.txt | grep -n "meow[a-z]*" | sed -r "s/([0-9]+).*/\1/"
 ```
 <br>
