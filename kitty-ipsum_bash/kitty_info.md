@@ -53,7 +53,7 @@ cat kitty_ipsum_1.txt | grep --line-number "meow[a-z]*" | sed -E "s/([0-9]+).*/\
 #### 5a
 Number of times cat, cats, or catnip appears: 
 7
-```bash
+```shell
 cat kitty_ipsum_1.txt | grep --color -o "cat[a-z]*" | wc -l
 ```
 <br>
@@ -68,7 +68,7 @@ Lines that they appear on:\
 21\
 22\
 26
-```bash
+```shell
 cat kitty_ipsum_1.txt | grep --line-number "cat[a-z]*" | sed -E "s/([0-9]+).*/\1/"
 ```
 <br>
